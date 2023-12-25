@@ -2,8 +2,6 @@ Pegasus NDC
 =====================
 Created by testinium on 7.09.2022
 
-
-
 1 OW uçuşta değişiklik 1 ADT yolcu, OW DOM uçuşta tarih değişikliği yapılır.(tahsilat çıktı)
 -----------------------------------------------------------------------------
 tags: 1-NDCReissueEkOwDom1AdtTarih

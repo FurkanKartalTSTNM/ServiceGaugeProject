@@ -20,22 +20,6 @@ tags: 1-NDCBiletlemeOwDom3AdtEkoGaranti
 * "https://prepndc.flypgs.com/CraneNDC/CraneNDCService" servisine istek at
 
 
-DOM - (1 ADT) - OW - MCO ile ödeme
------------------------------------------------------------------------------
-tags: 2-NDCBiletlemeOwDom1AdtMCO
-* Headers alanina gecerli kullanicinin Username ve Password bilgileri girilir
-* "doAirShopping_OW1ADT" sorgusu icin AgentUserID ile Username in ayni mi oldugu kontrol edilir
-* "doAirShopping_OW1ADT" requestine "replaceAirportCodefirst" yerine "SAW" "replaceAirportCodesecond" yerine "ADA" ve "replaceDate" olarak "5" gün ileri tarih yazilir
-* "https://prepndc.flypgs.com/CraneNDC/CraneNDCService" servisine istek at
-* AirShopping sorgusundan donen ilk ucusun OfferID ve ResponseID alani kaydedilir
-// doOrderCreate_OW1ADT
-* OrderCreate sorgusu icin AgentUserID ile Username in ayni mi oldugu kontrol edilir
-* AirShopping sorgusundan donen OfferID ve ResponseID alani OrderCreate servisindeki ilgili alana girilir
-* "https://prepndc.flypgs.com/CraneNDC/CraneNDCService" servisine istek at
-* OrderCreate sorgusundan donen OrderID Ucret ve pnr kismi kayit edilir
-//doAirDocIssue_MCO1ADT
-* MCO icin OrderCreate sorgusundan donen OrderID ve CurrencyPrice alani AirDocIssue servisindeki ilgili alana girilir
-* "https://prepndc.flypgs.com/CraneNDC/CraneNDCService" servisine istek at
 
 INT - (1 ADT + 1CH + 1INF) - OW - SEKO Finans
 -----------------------------------------------------------------------------

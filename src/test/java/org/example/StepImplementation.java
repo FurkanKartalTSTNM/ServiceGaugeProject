@@ -4,9 +4,12 @@ import com.thoughtworks.gauge.Step;
 import io.restassured.path.xml.XmlPath;
 import io.restassured.specification.RequestSpecification;
 
+import kong.unirest.HttpResponse;
+import kong.unirest.JsonNode;
 import okhttp3.*;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
+import kong.unirest.Unirest;
 import org.junit.platform.engine.support.hierarchical.Node;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +25,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 //import static org.openqa.selenium.logging.LogEntry.DATE_FORMAT;
 
 
@@ -36,7 +40,33 @@ public class StepImplementation {
     HashMap<String, String> headers = new HashMap<>();
 
     private Logger logger = LoggerFactory.getLogger(getClass());
+    private HttpResponse<JsonNode> responses;
 
+
+    @Step("GET isteği gönder <endpoint>")
+    public void sendGetRequest(String endpoint) {
+        responses = Unirest.get(endpoint)
+                .header("Accept", "application/json")
+                .asJson();
+    }
+
+    @Step("Status kodu <statusCode> olmalı")
+    public void verifyStatusCode(int statusCode) {
+        assertEquals(statusCode, responses.getStatus());
+    }
+
+    @Step("Yanıt JSON'unda <key> değeri <expectedValue> olmalı")
+    public void verifyJsonValue(String key, String expectedValue) {
+        String actual = responses.getBody().getObject().optString(key, null);
+        System.out.println("JSON: " + responses.getBody());
+        assertEquals(expectedValue, actual);
+    }
+
+    @Step("Yanıt JSON'unda <key> değeri <expectedValue> sayı olarak olmalı")
+    public void verifyJsonNumericValue(String key, int expectedValue) {
+        int actual = responses.getBody().getObject().optInt(key, -1);
+        assertEquals(expectedValue, actual);
+    }
 
     @Step("xml olustur")
     public void xml(){
@@ -208,7 +238,7 @@ public class StepImplementation {
     {
         if ("aynı".equals(type))
         {
-            Assertions.assertEquals(hashMap.get(hashmapKey).toString(), hashMap.get(hashmapKey1).toString(), "hashmapteki degerler eslesiyor...");
+            assertEquals(hashMap.get(hashmapKey).toString(), hashMap.get(hashmapKey1).toString(), "hashmapteki degerler eslesiyor...");
             System.out.println(hashMap.get(hashmapKey).toString()+" , "+ hashMap.get(hashmapKey1).toString() + " ile " + type + "mi kontrol edildi");
         }
         else if ("farklı".equals(type))
@@ -303,7 +333,7 @@ public class StepImplementation {
 
         System.out.println("Gelen Eleman: "+gelenEleman);
 
-        Assertions.assertEquals(value,gelenEleman.toString(),"Degerler eslesmiyor!..");
+        assertEquals(value,gelenEleman.toString(),"Degerler eslesmiyor!..");
         System.out.println(value +" degeri " + gelenEleman.toString() + " ile ayni mi kontrol edildi....");
     }
 
@@ -317,7 +347,7 @@ public class StepImplementation {
 
         System.out.println("Gelen Eleman: "+gelenEleman);
 
-        Assertions.assertEquals(hashMap.get(key),gelenEleman.toString(),"Degerler eslesmiyor!..");
+        assertEquals(hashMap.get(key),gelenEleman.toString(),"Degerler eslesmiyor!..");
         System.out.println(hashMap.get(key) +" hashmapden gelen degeri " + gelenEleman + " ile ayni mi kontrol edildi....");
     }
     @Step("<text> xmlinde <yol> xpathinindeki elementi headerdaki <key> keyli deger ile karsilastir")
@@ -332,7 +362,7 @@ public class StepImplementation {
 
         System.out.println("xml Eleman: " + xmlEleman);
 
-        Assertions.assertEquals(headers.get(key),xmlEleman.toString(),"Degerler eslesmiyor!..");
+        assertEquals(headers.get(key),xmlEleman.toString(),"Degerler eslesmiyor!..");
         System.out.println(headers.get(key) +" headersdan gelen deger " + xmlEleman + " ile ayni mi kontrol edildi....");
 
     }

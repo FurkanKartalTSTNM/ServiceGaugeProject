@@ -2,129 +2,129 @@ Pegasus NDC Biletleme RT
 =====================
 
 
-deneme01
+postTest_01
 ---
-tags:deneme
+tags:postTest_01
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/1"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "1" olmalı
 
-deneme02
+postTest_02
 ---
-tags:deneme
+tags:postTest_02
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/2"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "2" olmalı
 
-deneme03
+postTest_03
 ---
-tags:deneme
+tags:postTest_03
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/3"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "3" olmalı
 
-deneme04
+postTest_04
 ---
-tags:deneme
+tags:postTest_04
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/4"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "4" olmalı
 
-deneme05
+postTest_05
 ---
-tags:deneme
+tags:postTest_05
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/5"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "5" olmalı
 
-deneme06
+postTest_06
 ---
-tags:deneme
+tags:postTest_06
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/6"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "6" olmalı
 
-deneme07
+postTest_07
 ---
-tags:deneme
+tags:postTest_07
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/7"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "7" olmalı
 
-deneme08
+postTest_08
 ---
-tags:deneme
+tags:postTest_08
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/8"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "8" olmalı
 
-deneme09
+postTest_09
 ---
-tags:deneme
+tags:postTest_09
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/9"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "9" olmalı
 
-deneme10
+postTest_10
 ---
-tags:deneme
+tags:postTest_10
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/10"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "10" olmalı
 
-deneme11
+postTest_11
 ---
-tags:deneme
+tags:postTest_11
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/11"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "2" olmalı
 * Yanıt JSON'unda "id" değeri "11" olmalı
 
-deneme12
+postTest_12
 ---
-tags:deneme
+tags:postTest_12
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/12"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "2" olmalı
 * Yanıt JSON'unda "id" değeri "12" olmalı
 
-deneme13
+postTest_13
 ---
-tags:deneme
+tags:postTest_13
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/13"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "2" olmalı
 * Yanıt JSON'unda "id" değeri "13" olmalı
 
-deneme14
+postTest_14
 ---
-tags:deneme
+tags:postTest_14
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/14"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "2" olmalı
 * Yanıt JSON'unda "id" değeri "14" olmalı
 
-deneme15
+postTest_15
 ---
-tags:deneme
+tags:postTest_15
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/15"
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "2" olmalı
 * Yanıt JSON'unda "id" değeri "15" olmalı
 
-denemeFail
+postTest_Fail
 ---
-tags:deneme
+tags:postTest_Fail
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/99999"
 * Status kodu "404" olmalı
 * Yanıt JSON'unda "message" değeri "Not Found" olmalı

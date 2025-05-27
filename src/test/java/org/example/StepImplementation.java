@@ -898,6 +898,11 @@ public class StepImplementation {
         }
     }
 
+    @Step("Wait for <seconds> seconds")
+    public void waitForSeconds(int seconds) throws InterruptedException {
+        Thread.sleep(seconds * 1000L);
+    }
+
 
 
 

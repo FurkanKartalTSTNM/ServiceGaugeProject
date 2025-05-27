@@ -6,6 +6,7 @@ postTest_01
 ---
 tags:postTest_01
 * GET isteği gönder "https://jsonplaceholder.typicode.com/posts/1"
+* Wait for "300" seconds
 * Status kodu "200" olmalı
 * Yanıt JSON'unda "userId" değeri "1" olmalı
 * Yanıt JSON'unda "id" değeri "1" olmalı

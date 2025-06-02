@@ -45,6 +45,10 @@ public class StepImplementation {
 
     @Step("GET isteği gönder <endpoint>")
     public void sendGetRequest(String endpoint) {
+        String env = System.getenv("key");
+        System.out.println("env: "+env);
+        String property = System.getProperty("key");
+        System.out.println("property: "+env);
         responses = Unirest.get(endpoint)
                 .header("Accept", "application/json")
                 .asJson();

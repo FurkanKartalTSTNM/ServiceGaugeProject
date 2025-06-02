@@ -48,7 +48,7 @@ public class StepImplementation {
         String env = System.getenv("key");
         System.out.println("env: "+env);
         String property = System.getProperty("key");
-        System.out.println("property: "+env);
+        System.out.println("property: "+property);
         responses = Unirest.get(endpoint)
                 .header("Accept", "application/json")
                 .asJson();
